@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.scss" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <!-- main content start -->
+    <header>
+      <h1>Weather App</h1>
+    </header>
+    <div id="search-container">
+      <input
+        type="text"
+        id="filter"
+        name="filter"
+        minlength="5"
+        maxlength="5"
+        placeholder="Type a zipcode..."
+      />
+    </div>
+    <div id="container">
+      <div id="weather-app-container">
+        <!-- weather animation area start -->
+        <div id="weather-content-container">
+          <!-- horizontal animation path 1 -->
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <!-- horizontal animation path 2 -->
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <!-- horizontal animation path 3 -->
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <!-- weather animation area end -->
+        <div id="sun"></div>
+        <div id="moon"></div>
+        <!-- sun and moon orbit end -->
+      </div>
+
+      <!-- thermometer start -->
+      <div id="thermometer-container">
+        <div id="thermometer">
+          <div id="glass"></div>
+          <div id="mercury"></div>
+        </div>
+        <div class="ball"></div>
+        <div class="ball under"></div>
+      </div>
+      <!-- thermometer end -->
+
+      <!-- lanscape background start -->
+      <div id="landscape-container">
+        <div id="hill"></div>
+
+        <!-- restult area start -->
+        <div id="result-area-container">
+          <ul>
+            <li class="active">Welcome</li>
+            <li>Results</li>
+            <li>About</li>
+          </ul>
+          <div id="folder">
+            <div id="result-area">
+              <h2>Welcome!</h2>
+              <p>
+                This is my dumb site! I hope it helps you more than it helps me.
+                Please use the search bar above. ad quidem, voluptates sint
+                repellat, quas, debitis ipsum voluptate fugiat ipsa maiores
+                voluptatem eveniet cumque similique amet.
+              </p>
+            </div>
+            <div id="change-weather">
+              <h2>Change the weather here!</h2>
+              <form action="">
+                <label for="clouds">Cloud Cover: </label>
+                -
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="50"
+                  class="slider"
+                  id="clouds"
+                />+<br /><br />
+                <label for="precipitation">Precipitation: </label>
+                -
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="50"
+                  class="slider"
+                  id="precipitation"
+                />+<br /><br />
+                <label for="wind">Wind Speed: </label>
+                -
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="50"
+                  class="slider"
+                  id="wind"
+                />+<br /><br />
+                <label for="wind">Temperature: </label>-
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="50"
+                  class="slider"
+                  id="temp"
+                />+<br /><br />
+                <label for="time">Time of Day: </label>-
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="50"
+                  class="slider"
+                  id="time"
+                />+
+              </form>
+            </div>
+            <div class="clear-float"></div>
+          </div>
+        </div>
+        <!-- restult area end -->
+      </div>
+      <!-- lanscape background end -->
+    </div>
+    <!-- main content end -->
+    <footer>
+      &copy;
+      <a href="./pages/about.html" target="_blank">Chris Vander Linden</a>
+    </footer>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
