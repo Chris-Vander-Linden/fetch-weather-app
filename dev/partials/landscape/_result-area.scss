@@ -1,0 +1,132 @@
+$folder-color: #ffce86;
+$widget-color: #ffb7cf;
+
+/* container for weather results and weather form */
+
+#result-area-container ul {
+  /* folder tab navigation */
+  margin: 0px 0px 0px 20px;
+
+  list-style-type: none;
+
+  li {
+    min-width: 80px;
+
+    display: inline-block;
+
+    margin-left: 5px;
+    padding: 5px 5px 5px 5px;
+
+    border: 2px solid darken($folder-color, 100%);
+    border-radius: 5px 5px 0px 0px;
+
+    position: relative;
+    z-index: 5;
+    top: 4px;
+
+    background-color: darken($folder-color, 15%);
+
+    text-align: center;
+
+    cursor: pointer;
+
+    &.active {
+      position: relative;
+      z-index: 20;
+      top: 4px;
+      border-bottom: 0px;
+      background-color: $folder-color;
+      &:hover {
+        background-color: darken($folder-color, 0%);
+      }
+    }
+    &:hover {
+      background-color: darken($folder-color, 27%);
+    }
+    /* update navigation for mobile display */
+    @include phone {
+      visibility: hidden;
+    }
+  }
+}
+
+/* container for weather results */
+#folder {
+  // substract header, searchbar, and footer height
+  min-height: calc(60vh - 132px);
+
+  position: relative;
+  z-index: 19;
+
+  font-weight: 900;
+  font-style: italic;
+
+  #result-area {
+    width: calc(65% - 15px);
+    min-height: 100%;
+
+    float: left;
+
+    margin: 0px 5px 10px 10px;
+    padding: 10px;
+
+    border: 2px solid darken($folder-color, 100%);
+    border-radius: 5px;
+
+    background-color: $folder-color;
+    box-shadow: 1px 1px 3px darken($folder-color, 100%);
+    p {
+      padding: 5px;
+
+      border-radius: 5px;
+
+      background-color: lighten($folder-color, 20%);
+    }
+    /* switch to single coloumn layout */
+    @include phone {
+      width: calc(100% - 20px);
+
+      margin: 10px;
+    }
+  }
+
+  /* widget to change weather */
+  #change-weather {
+    width: calc(35% - 15px);
+
+    float: right;
+
+    margin: 0px 10px 10px 5px;
+    padding: 10px;
+
+    border-radius: 5px;
+
+    background-color: $widget-color;
+
+    border: 2px solid darken($widget-color, 100%);
+    box-shadow: 1px 1px 3px darken($widget-color, 100%);
+
+    form {
+      padding: 10px;
+      background-color: lighten($widget-color, 10%);
+
+      border-radius: 5px;
+
+      label {
+        display: block;
+        text-align: center;
+      }
+
+      input {
+        width: 90%;
+      }
+    }
+
+    /* switch to single coloumn layout */
+    @include phone {
+      width: calc(100% - 20px);
+
+      margin: 0px 10px 10px 10px;
+    }
+  }
+}

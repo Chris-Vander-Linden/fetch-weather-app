@@ -1,0 +1,563 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* variables, mixins, and functions */
+.clear-float {
+  width: 100%;
+  clear: both;
+}
+
+/* font style, sizes, colors, etc. */
+header {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+header h1 {
+  margin: auto;
+  text-align: center;
+}
+
+#search-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  margin: auto;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+@media (min-width: 900px) {
+  #search-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #search-container {
+    max-width: 1000px;
+  }
+}
+
+#search-container input {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+  border-radius: 0px;
+  border: none;
+  -webkit-animation: search-fade-in 2s linear 1 forwards;
+          animation: search-fade-in 2s linear 1 forwards;
+}
+
+#search-container input:focus {
+  outline: none;
+}
+
+#search-container input::-webkit-input-placeholder {
+  color: #000;
+}
+
+#search-container input:-ms-input-placeholder {
+  color: #000;
+}
+
+#search-container input::-ms-input-placeholder {
+  color: #000;
+}
+
+#search-container input::placeholder {
+  color: #000;
+}
+
+@-webkit-keyframes search-fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes search-fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+div#weather-content-container {
+  /* night */
+  background-color: #001c29;
+  /* day */
+  background-color: #c2ebff;
+  height: 100%;
+  width: 100%;
+  /* defaults structure for horizontal animations paths */
+}
+
+div#weather-content-container div {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  /* default structure for objects inside horizontal paths */
+  /* horizontal path 1 */
+  /* horizontal path 2 */
+  /* horizontal path 3 */
+}
+
+div#weather-content-container div div {
+  position: relative;
+  height: 40px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+div#weather-content-container div:nth-of-type(1) {
+  /* this path is in front of thermometer */
+  z-index: 3;
+  animation: up-and-down 25s infinite linear alternate-reverse;
+  /* inner object 1 */
+  /* inner object 2 */
+}
+
+div#weather-content-container div:nth-of-type(1) div:nth-of-type(1) {
+  -webkit-animation: left-to-right 64s infinite linear;
+          animation: left-to-right 64s infinite linear;
+}
+
+div#weather-content-container div:nth-of-type(1) div:nth-of-type(2) {
+  -webkit-animation: left-to-right 20s infinite linear;
+          animation: left-to-right 20s infinite linear;
+}
+
+div#weather-content-container div:nth-of-type(2) {
+  -webkit-animation: up-and-down 55s infinite linear alternate;
+          animation: up-and-down 55s infinite linear alternate;
+  /* inner object 1 */
+  /* inner object 2 */
+}
+
+div#weather-content-container div:nth-of-type(2) div:nth-of-type(1) {
+  -webkit-animation: left-to-right 37s infinite linear;
+          animation: left-to-right 37s infinite linear;
+}
+
+div#weather-content-container div:nth-of-type(2) div:nth-of-type(2) {
+  -webkit-animation: left-to-right 80s infinite linear;
+          animation: left-to-right 80s infinite linear;
+}
+
+div#weather-content-container div:nth-of-type(3) {
+  -webkit-animation: up-and-down 35s infinite linear alternate;
+          animation: up-and-down 35s infinite linear alternate;
+  /* inner object 1 */
+  /* inner object 2 */
+}
+
+div#weather-content-container div:nth-of-type(3) div:nth-of-type(1) {
+  -webkit-animation: left-to-right 63s infinite linear;
+          animation: left-to-right 63s infinite linear;
+}
+
+div#weather-content-container div:nth-of-type(3) div:nth-of-type(2) {
+  -webkit-animation: left-to-right 34s infinite linear;
+          animation: left-to-right 34s infinite linear;
+}
+
+/* horizontal path animation */
+@-webkit-keyframes up-and-down {
+  from {
+    top: 5%;
+    opacity: 0.3;
+  }
+  to {
+    top: 20%;
+  }
+}
+@keyframes up-and-down {
+  from {
+    top: 5%;
+    opacity: 0.3;
+  }
+  to {
+    top: 20%;
+  }
+}
+
+/* inner object animation */
+@-webkit-keyframes left-to-right {
+  0% {
+    opacity: 0;
+    left: -20%;
+  }
+  50% {
+    opacity: 0.7;
+    -webkit-transform: scale(4, 1.5);
+            transform: scale(4, 1.5);
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+    -webkit-transform: scale(3, 1.25);
+            transform: scale(3, 1.25);
+  }
+}
+@keyframes left-to-right {
+  0% {
+    opacity: 0;
+    left: -20%;
+  }
+  50% {
+    opacity: 0.7;
+    -webkit-transform: scale(4, 1.5);
+            transform: scale(4, 1.5);
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+    -webkit-transform: scale(3, 1.25);
+            transform: scale(3, 1.25);
+  }
+}
+
+/* sun, moon, stars */
+#sun,
+#moon {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  top: 10%;
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-animation: rise 2s linear;
+          animation: rise 2s linear;
+}
+
+#sun {
+  right: 20%;
+  border: 5px solid #ffffb6;
+  -webkit-box-shadow: 0px 0px 40px #ffff00;
+          box-shadow: 0px 0px 40px #ffff00;
+  background-color: #ffff00;
+}
+
+.night #moon {
+  left: 20%;
+  border: 5px solid #ffffb6;
+  -webkit-box-shadow: 0px 0px 40px #ffffe2;
+          box-shadow: 0px 0px 40px #ffffe2;
+  background-color: #ffffe2;
+}
+
+@-webkit-keyframes rise {
+  from {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    top: 150%;
+  }
+}
+
+@keyframes rise {
+  from {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    top: 150%;
+  }
+}
+
+/* Weather Conditions */
+/* Time of Day */
+/* Time of Day Themes */
+/* Weather Conditions */
+#thermometer-container {
+  height: calc(40vh - 55px);
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 10px;
+}
+
+#thermometer {
+  height: 100%;
+  width: 80px;
+  position: relative;
+  z-index: 2;
+  margin: auto;
+  border: 3px solid #000;
+  border-bottom: 0px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+#glass {
+  height: 100%;
+  z-index: 2;
+  border-radius: 20px 20px 0px 0px;
+  opacity: 0.7;
+  background-color: #fbfbfb;
+  -webkit-box-shadow: inset 0px 0px 10px #090909;
+          box-shadow: inset 0px 0px 10px #090909;
+}
+
+/* inside */
+#mercury {
+  height: 35px;
+  width: 100%;
+  opacity: 1;
+  background-color: #d10404;
+  -webkit-box-shadow: inset 0px 0px 10px black;
+          box-shadow: inset 0px 0px 10px black;
+  position: absolute;
+  bottom: 0px;
+  z-index: 7;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 3px;
+  -webkit-transition: height 2s;
+  transition: height 2s;
+}
+
+.ball {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  bottom: 28px;
+  z-index: 2;
+  /* center text in middle of circle */
+  padding: 20px 0px 0px 15px;
+  margin: auto;
+  border-radius: 50%;
+  opacity: 1;
+  background-color: #d10404;
+  -webkit-box-shadow: inset 0px 0px 10px black;
+          box-shadow: inset 0px 0px 10px black;
+  color: #fbfbfb;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 40px;
+  font-weight: 900;
+  /* ball underneath with border styling */
+}
+
+.ball.under {
+  height: 97px;
+  width: 97px;
+  z-index: 1;
+  bottom: 120px;
+  border: 3px solid #000;
+}
+
+/* container for weather results and weather form */
+#result-area-container ul {
+  /* folder tab navigation */
+  margin: 0px 0px 0px 20px;
+  list-style-type: none;
+}
+
+#result-area-container ul li {
+  min-width: 80px;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 5px 5px 5px;
+  border: 2px solid black;
+  border-radius: 5px 5px 0px 0px;
+  position: relative;
+  z-index: 5;
+  top: 4px;
+  background-color: #ffaf3a;
+  text-align: center;
+  cursor: pointer;
+  /* update navigation for mobile display */
+}
+
+#result-area-container ul li.active {
+  position: relative;
+  z-index: 20;
+  top: 4px;
+  border-bottom: 0px;
+  background-color: #ffce86;
+}
+
+#result-area-container ul li.active:hover {
+  background-color: #ffce86;
+}
+
+#result-area-container ul li:hover {
+  background-color: #fb9600;
+}
+
+@media (max-width: 659px) {
+  #result-area-container ul li {
+    visibility: hidden;
+  }
+}
+
+/* container for weather results */
+#folder {
+  min-height: calc(60vh - 132px);
+  position: relative;
+  z-index: 19;
+  font-weight: 900;
+  font-style: italic;
+  /* widget to change weather */
+}
+
+#folder #result-area {
+  width: calc(65% - 15px);
+  min-height: 100%;
+  float: left;
+  margin: 0px 5px 10px 10px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ffce86;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+  /* switch to single coloumn layout */
+}
+
+#folder #result-area p {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fff7ec;
+}
+
+@media (max-width: 659px) {
+  #folder #result-area {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+}
+
+#folder #change-weather {
+  width: calc(35% - 15px);
+  float: right;
+  margin: 0px 10px 10px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffb7cf;
+  border: 2px solid black;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+  /* switch to single coloumn layout */
+}
+
+#folder #change-weather form {
+  padding: 10px;
+  background-color: #ffeaf1;
+  border-radius: 5px;
+}
+
+#folder #change-weather form label {
+  display: block;
+  text-align: center;
+}
+
+#folder #change-weather form input {
+  width: 90%;
+}
+
+@media (max-width: 659px) {
+  #folder #change-weather {
+    width: calc(100% - 20px);
+    margin: 0px 10px 10px 10px;
+  }
+}
+
+#landscape-container #hill {
+  height: calc(20vh + 100px);
+  width: 200%;
+  position: absolute;
+  top: -100px;
+  left: -50%;
+  border-radius: 50% 50% 0% 0%;
+  border-top: 5px solid #00cd00;
+  background-color: #008000;
+  -webkit-box-shadow: 0px 20px 30px inset #00b300;
+          box-shadow: 0px 20px 30px inset #00b300;
+}
+
+/* set up basic structure for all main containers */
+body {
+  font-family: "Permanent Marker", Arial, Helvetica, sans-serif;
+}
+
+#container {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  margin: auto;
+}
+
+@media (max-width: 659px) {
+  #container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 660px) {
+  #container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  #container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #container {
+    max-width: 1000px;
+  }
+}
+
+#weather-app-container {
+  min-height: 40vh;
+  height: 50%;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  background-color: #00ffff;
+}
+
+#landscape-container {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  background-color: green;
+}
+
+#landscape-container #result-area-container {
+  width: 100%;
+  z-index: 100;
+  position: relative;
+}
+
+footer {
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

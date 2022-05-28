@@ -1,0 +1,87 @@
+@import "./partials/setup/resets";
+@import "./partials/setup/media";
+@import "./partials/setup/utils";
+@import "./partials/setup/typography";
+
+@import "./partials/header";
+
+@import "./partials/sky/sky-animations";
+@import "./partials/sky/weather-variables";
+@import "./partials/sky/weather-functions";
+
+@import "./partials/thermometer/thermometer";
+
+@import "./partials/landscape/result-area";
+@import "./partials/landscape/landscape";
+
+/* set up basic structure for all main containers */
+body {
+  font-family: $font-stack;
+}
+
+#container {
+  width: 100%;
+
+  overflow-x: hidden;
+  position: relative;
+
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+
+  margin: auto;
+
+  @include phone {
+    width: 100%;
+  }
+
+  @include tablet-portrait {
+    width: 100%;
+  }
+
+  @include tablet-landscape {
+    width: 100%;
+  }
+
+  @include desktop {
+    max-width: 1000px;
+  }
+}
+
+#weather-app-container {
+  min-height: 40vh;
+  height: 50%;
+  width: 100%;
+
+  z-index: 2;
+
+  position: relative;
+
+  background-color: #00ffff;
+}
+
+#landscape-container {
+  width: 100%;
+
+  z-index: 2;
+
+  position: relative;
+
+  background-color: green;
+
+  #result-area-container {
+    width: 100%;
+
+    z-index: 100;
+    position: relative;
+  }
+}
+
+footer {
+  padding: 5px;
+
+  font-size: 20px;
+  text-align: center;
+
+  background-color: #000;
+  color: #fff;
+}

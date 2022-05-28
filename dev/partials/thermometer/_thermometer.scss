@@ -1,0 +1,96 @@
+$mercury-color: #d10404;
+$glass-color: #fbfbfb;
+
+// style for glass and mercury
+@mixin thermo-box-shadow($color, $opacity) {
+  opacity: $opacity;
+  background-color: $color;
+  box-shadow: inset 0px 0px 10px darken($color, 95%);
+}
+
+#thermometer-container {
+  height: calc(40vh - 55px);
+  width: 100%;
+
+  position: absolute;
+  z-index: 3;
+
+  top: 10px;
+}
+
+#thermometer {
+  height: 100%;
+  width: 80px;
+
+  position: relative;
+  z-index: 2;
+
+  margin: auto;
+
+  border: 3px solid #000;
+  border-bottom: 0px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+#glass {
+  height: 100%;
+  z-index: 2;
+  border-radius: 20px 20px 0px 0px;
+
+  @include thermo-box-shadow($glass-color, 0.7);
+}
+
+/* inside */
+#mercury {
+  // default height on load
+  height: 35px;
+  width: 100%;
+
+  @include thermo-box-shadow($mercury-color, 1);
+
+  position: absolute;
+  bottom: 0px;
+  z-index: 7;
+
+  font-size: 20px;
+  font-weight: 900;
+
+  border-radius: 3px;
+
+  transition: height 2s;
+}
+
+.ball {
+  height: 90px;
+  width: 90px;
+
+  position: relative;
+  bottom: 28px;
+  z-index: 2;
+
+  /* center text in middle of circle */
+  padding: 20px 0px 0px 15px;
+  margin: auto;
+
+  border-radius: 50%;
+
+  @include thermo-box-shadow($mercury-color, 1);
+
+  color: $glass-color;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+  font-size: 40px;
+  font-weight: 900;
+
+  /* ball underneath with border styling */
+  &.under {
+    height: 97px;
+    width: 97px;
+
+    z-index: 1;
+    bottom: 120px;
+
+    border: 3px solid #000;
+  }
+}

@@ -1,0 +1,63 @@
+header {
+  background-color: #1d1d1d;
+  color: #fff;
+
+  h1 {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+#search-container {
+  @include tablet-landscape {
+    width: 100%;
+  }
+
+  @include desktop {
+    max-width: 1000px;
+  }
+
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+
+  margin: auto;
+
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  border-bottom: 1px solid #000;
+
+  input {
+    position: sticky;
+    width: 100%;
+
+    display: block;
+
+    text-align: center;
+    font-size: 25px;
+
+    margin: auto;
+
+    border-radius: 0px;
+    border: none;
+
+    animation: search-fade-in 2s linear 1 forwards;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #000;
+    }
+  }
+}
+
+@keyframes search-fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+}

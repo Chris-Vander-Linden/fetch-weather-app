@@ -1,0 +1,136 @@
+div#weather-content-container {
+  /* night */
+  background-color: darken(#c2ebff, 80%);
+  /* day */
+  background-color: darken(#c2ebff, 0%);
+
+  height: 100%;
+  width: 100%;
+
+  /* defaults structure for horizontal animations paths */
+  div {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+
+    /* default structure for objects inside horizontal paths */
+    div {
+      position: relative;
+      height: 40px;
+      width: 100px;
+
+      background-color: #fff;
+      border-radius: 50px;
+    }
+
+    /* horizontal path 1 */
+    &:nth-of-type(1) {
+      /* this path is in front of thermometer */
+      z-index: 3;
+      animation: up-and-down 25s infinite linear alternate-reverse;
+
+      /* inner object 1 */
+      div:nth-of-type(1) {
+        animation: left-to-right 64s infinite linear;
+      }
+      /* inner object 2 */
+      div:nth-of-type(2) {
+        animation: left-to-right 20s infinite linear;
+      }
+    }
+
+    /* horizontal path 2 */
+    &:nth-of-type(2) {
+      animation: up-and-down 55s infinite linear alternate;
+      /* inner object 1 */
+      div:nth-of-type(1) {
+        animation: left-to-right 37s infinite linear;
+      }
+      /* inner object 2 */
+      div:nth-of-type(2) {
+        animation: left-to-right 80s infinite linear;
+      }
+    }
+
+    /* horizontal path 3 */
+    &:nth-of-type(3) {
+      animation: up-and-down 35s infinite linear alternate;
+      /* inner object 1 */
+      div:nth-of-type(1) {
+        animation: left-to-right 63s infinite linear;
+      }
+      /* inner object 2 */
+      div:nth-of-type(2) {
+        animation: left-to-right 34s infinite linear;
+      }
+    }
+  }
+}
+
+/* horizontal path animation */
+@keyframes up-and-down {
+  from {
+    top: 5%;
+    opacity: 0.3;
+  }
+
+  to {
+    top: 20%;
+  }
+}
+
+/* inner object animation */
+@keyframes left-to-right {
+  0% {
+    opacity: 0;
+    left: -20%;
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(4, 1.5);
+  }
+
+  100% {
+    opacity: 0;
+    left: 100%;
+    transform: scale(3, 1.25);
+  }
+}
+
+/* sun, moon, stars */
+#sun,
+#moon {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  top: 10%;
+
+  z-index: -1;
+
+  border-radius: 50%;
+  animation: rise 2s linear;
+}
+
+#sun {
+  right: 20%;
+
+  border: 5px solid #ffffb6;
+  box-shadow: 0px 0px 40px #ffff00;
+  background-color: #ffff00;
+}
+
+.night #moon {
+  left: 20%;
+
+  border: 5px solid #ffffb6;
+  box-shadow: 0px 0px 40px #ffffe2;
+  background-color: #ffffe2;
+}
+
+@keyframes rise {
+  from {
+    transform: scale(2, 2);
+    top: 150%;
+  }
+}

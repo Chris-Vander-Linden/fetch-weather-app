@@ -1,0 +1,34 @@
+/* Styles for about page */
+html {
+  background-color: #dedede;
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background-color: #ffffff;
+  max-width: 800px;
+  padding: 10px;
+  margin: auto;
+  min-height: calc(100% - 20px);
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: orange;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+}
+
+button:hover {
+  background-color: #f59e00;
+}
+/*# sourceMappingURL=about.css.map */

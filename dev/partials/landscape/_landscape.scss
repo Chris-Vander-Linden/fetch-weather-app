@@ -1,0 +1,17 @@
+$hill-color: #008000;
+
+#landscape-container {
+  #hill {
+    height: calc(20vh + 100px);
+    width: 200%;
+
+    position: absolute;
+    top: -100px;
+    left: -50%;
+
+    border-radius: 50% 50% 0% 0%;
+    border-top: 5px solid lighten($hill-color, 15%);
+    background-color: $hill-color;
+    box-shadow: 0px 20px 30px inset lighten($hill-color, 10%);;
+  }
+}
