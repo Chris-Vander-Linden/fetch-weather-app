@@ -4,23 +4,24 @@ const resultArea = document.querySelector("#folder #result-area");
 const textField = document.querySelector("#filter");
 const mercury = document.querySelector("#mercury")
 const ball = document.querySelector(".ball")
-const key = "e2ab0cf423d3fd3dde9b75239925987e";
+const API = new FetchWrapper(`https://api.openweathermap.org/data/2.5/weather?zip=`);
+const APIkey = process.env.API_KEY;
 
-// check out diff scope between arrow and normal function
-textField.addEventListener("keyup", function (event) {
+textField.addEventListener("keyup", (event) => {
+  console.log("inside")
 
   // exit function if zipcode length doesn't equal 5
-  // use https://lodash.com/docs/4.17.11#debounce to prevent multi calls
-  if (this.value.length != 5) return;
+  if (event.currentTarget.value.length != 5) return;
 
   // catch error if no results
 
   // set zipcode value
-  let zip = this.value;
+  let zip = event.currentTarget.value;
 
   // create final endpoint by combining zip value with key
-  let endpoint = zip + ",us&appid=e2ab0cf423d3fd3dde9b75239925987e&units=imperial";
-  const API = new FetchWrapper(`https://api.openweathermap.org/data/2.5/weather?zip=`);
+  let endpoint = zip + `,us&appid=${APIkey
+    }&units=imperial`;
+
 
   // call instance get method for API
   API.get(endpoint).then(data => {

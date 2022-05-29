@@ -2,15 +2,14 @@
   "name": "weather-app",
   "version": "1.0.0",
   "description": "This is a project for creating a weather app.",
-  "source": "src/index.js",
-  "main": "dist/main.js",
+  "source": "src/index.html",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "dev": "parcel",
+    "build": "parcel build"
   },
   "keywords": ["weather", "base"],
   "author": "Chris Vander Linden",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
     "parcel": "^2.5.0",
