@@ -1,14 +1,15 @@
-import FetchWrapper from "./modules/fetch-wrapper.js";
+import FetchWrapper from "./scripts/fetch-wrapper.js";
+import "./scripts/result-area-tabs.js";
 
 const resultArea = document.querySelector("#folder #result-area");
 const textField = document.querySelector("#filter");
-const mercury = document.querySelector("#mercury")
-const ball = document.querySelector(".ball")
-const API = new FetchWrapper(`https://api.openweathermap.org/data/2.5/weather?zip=`);
+const mercury = document.querySelector("#mercury");
+const ball = document.querySelector(".ball");
 const APIkey = process.env.API_KEY;
+const API = new FetchWrapper(`https://api.openweathermap.org/data/2.5/weather?zip=`);
+
 
 textField.addEventListener("keyup", (event) => {
-  console.log("inside")
 
   // exit function if zipcode length doesn't equal 5
   if (event.currentTarget.value.length != 5) return;
@@ -21,7 +22,6 @@ textField.addEventListener("keyup", (event) => {
   // create final endpoint by combining zip value with key
   let endpoint = zip + `,us&appid=${APIkey
     }&units=imperial`;
-
 
   // call instance get method for API
   API.get(endpoint).then(data => {
@@ -41,24 +41,24 @@ textField.addEventListener("keyup", (event) => {
     // insert data in results area
     resultArea.insertAdjacentHTML("beforeend",
       `<div>
-        <h2>
-        Weather
-        </h2>
-        <p>
-          To${timeOfDay}, in ${data.name}... ${data.weather[0].description} and the temperature is ${temp}&#176;.${data.weather[0].description}<br>
-          Temperature: ${temp}&#176;<br>
-          Cloud cover: ${data.clouds.all}%<br>
-          Wind Speed: ${data.wind.speed} mph<br>
-          Base Weather Cond: ${data.weather[0].main}<br>
-          Time of day: ${data.dt}<br>
-          Sunrise: ${data.sys.sunrise}<br>
-          Sunset: ${data.sys.sunset}<br>
-          Day or Night: ${timeOfDay}<br>
-        </p>
+        <h2>Weather</h2>
+          <p>
+            To${timeOfDay}, in ${data.name}... ${data.weather[0].description} and the temperature is ${temp}&#176;.${data.weather[0].description}<br>
+            Temperature: ${temp}&#176;<br>
+            Cloud cover: ${data.clouds.all}%<br>
+            Wind Speed: ${data.wind.speed} mph<br>
+            Base Weather Cond: ${data.weather[0].main}<br>
+            Time of day: ${data.dt}<br>
+            Sunrise: ${data.sys.sunrise}<br>
+            Sunset: ${data.sys.sunset}<br>
+            Day or Night: ${timeOfDay}<br>
+          </p>
       </div>`
     )
+    // change height of mercury
     mercury.setAttribute("style", `height:${temp / 1.3}%`);
 
+    // update temperature in mercurty ball
     ball.innerHTML = temp + "&#176";
 
     // should maybe declare these outside scope since they will be updated by other widget.
@@ -66,15 +66,13 @@ textField.addEventListener("keyup", (event) => {
     const cloudCover = 'cloud-cover-percent-' + data.clouds.all;
     const windSpeed = 'wind-mph-' + Math.round(data.wind.speed);
 
-
-
     // add weather classes to body
     let classes = [timeOfDay, weather, cloudCover, windSpeed];
     document.querySelector("body").classList.add(...classes);
+  }).catch(error => console.error(error)).finally(() => {
+    console.log("done");
   });
 });
-
-
 
 /*
 Cloudiness, % 
@@ -103,18 +101,3 @@ Thunderstorm
 
 ... are others but not worth it.  Use this for classes.
 */
-
-const resultAreaTabs = document.querySelectorAll("#result-area-container li");
-
-resultAreaTabs.forEach(tab => {
-  console.log(tab);
-  tab.addEventListener("click", event => {
-    // clear active class from tabs
-    resultAreaTabs.forEach(tab => {
-      tab.className = "";
-    })
-    // add active class to tab
-    tab.className = "active";
-  });
-});
-
