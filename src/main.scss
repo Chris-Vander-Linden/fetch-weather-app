@@ -1,18 +1,18 @@
-@import "./partials/setup/resets";
-@import "./partials/setup/media";
-@import "./partials/setup/utils";
-@import "./partials/setup/typography";
+@import "./scss/setup/resets";
+@import "./scss/setup/media";
+@import "./scss/setup/utils";
+@import "./scss/setup/typography";
 
-@import "./partials/header";
+@import "./scss/header";
 
-@import "./partials/sky/sky-animations";
-@import "./partials/sky/weather-variables";
-@import "./partials/sky/weather-functions";
+@import "./scss/sky/sky-animations";
+@import "./scss/sky/weather-variables";
+@import "./scss/sky/weather-functions";
 
-@import "./partials/thermometer/thermometer";
+@import "./scss/thermometer/thermometer";
 
-@import "./partials/landscape/result-area";
-@import "./partials/landscape/landscape";
+@import "./scss/landscape/result-area";
+@import "./scss/landscape/landscape";
 
 /* set up basic structure for all main containers */
 body {
