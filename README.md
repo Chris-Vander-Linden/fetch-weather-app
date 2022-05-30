@@ -4,7 +4,7 @@
 
 Instructions for installing and using this application.
 
-Step 1: Get your API key from: [https://home.openweathermap.org/users/sign_up](https://home.openweathermap.org/users/sign_up)https://home.openweathermap.org/users/sign_up
+Step 1: Get your API key from: [https://home.openweathermap.org/users/sign_up](https://home.openweathermap.org/users/sign_up)
 
 Step 2: In the file ".env_sample", replace the text "PUT_YOUR_API_KEY_HERE" with your API key.
 
