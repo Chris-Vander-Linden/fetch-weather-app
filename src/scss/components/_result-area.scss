@@ -1,5 +1,16 @@
+@use "../utilities/mixins";
+
 $folder-color: #ffce86;
 $widget-color: #ffb7cf;
+
+
+// should this be here?
+.clear-float {
+  width: 100%;
+  clear: both;
+}
+
+
 
 /* container for weather results and weather form */
 
@@ -36,15 +47,18 @@ $widget-color: #ffb7cf;
       top: 4px;
       border-bottom: 0px;
       background-color: $folder-color;
+
       &:hover {
         background-color: darken($folder-color, 0%);
       }
     }
+
     &:hover {
       background-color: darken($folder-color, 27%);
     }
+
     /* update navigation for mobile display */
-    @include phone {
+    @include mixins.phone {
       visibility: hidden;
     }
   }
@@ -75,6 +89,7 @@ $widget-color: #ffb7cf;
 
     background-color: $folder-color;
     box-shadow: 1px 1px 3px darken($folder-color, 100%);
+
     p {
       padding: 5px;
 
@@ -82,8 +97,9 @@ $widget-color: #ffb7cf;
 
       background-color: lighten($folder-color, 20%);
     }
+
     /* switch to single coloumn layout */
-    @include phone {
+    @include mixins.phone {
       width: calc(100% - 20px);
 
       margin: 10px;
@@ -123,7 +139,7 @@ $widget-color: #ffb7cf;
     }
 
     /* switch to single coloumn layout */
-    @include phone {
+    @include mixins.phone {
       width: calc(100% - 20px);
 
       margin: 0px 10px 10px 10px;
