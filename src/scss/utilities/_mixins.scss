@@ -1,25 +1,63 @@
+@use "variables";
+@use "functions";
+
+// media queries
+
+/* Extra small devices (phones, 600px and down) */
 @mixin phone {
-  @media (max-width: 659px) {
+  @media only screen and (max-width: functions.pixels-to-rem(600px)) {
     @content;
   }
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
 @mixin tablet-portrait {
-  @media (min-width: 660px) {
+  @media only screen and (min-width: functions.pixels-to-rem(600px)) {
     @content;
   }
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
 @mixin tablet-landscape {
-  @media (min-width: 900px) {
+  @media only screen and (min-width: functions.pixels-to-rem(768px)) {
     @content;
   }
 }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@mixin laptop {
+  @media only screen and (min-width: functions.pixels-to-rem(992px)) {
+    @content;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 @mixin desktop {
-  @media (min-width: 1200px) {
+  @media only screen and (min-width: functions.pixels-to-rem(1200px)) {
     @content;
   }
 }
-@mixin desktop-large {
-  @media (min-width: 1800px) {
-    @content;
+
+@mixin border-theme($color) {
+  border: functions.pixels-to-rem(1px) solid $color;
+  border-radius: 3px;
+}
+
+// for injecting different themes
+//$theme-map: null;
+
+@mixin themes {
+
+  @each $theme,
+  $map in $themes {
+    $theme-map: $map;
+
+    .#{$theme} & {
+      @content;
+    }
   }
+
+  // $theme-map: null !global;
+  // this is already declared as !global in varibles.scss
+  $theme-map: null;
 }

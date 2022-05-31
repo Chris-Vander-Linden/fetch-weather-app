@@ -13,3 +13,27 @@ $time-of-day: (
   "afternoon": yellow,
   "night": green,
 );
+
+$themes: (
+  light-theme: ('text-color' : black,
+    'primary-color' : lighten(#392759, 50%),
+    'second-color': lighten(#2B9720,
+      30%),
+    'third-color' : lighten(#CDD1C4,
+      50%),
+    'fourth-color' : lighten(#5C80BC,
+      20%),
+    'action-color' : lighten(#FF4E00,
+      20%),
+    'warning-color' : lighten(#EFAAC4,
+      10%)),
+  dark-theme: ('text-color': rgb(227, 227, 227),
+    'primary-color' : #392759,
+    'second-color': #2B9720,
+    'third-color' : darken(#CDD1C4, 50%),
+    'fourth-color' : #5C80BC,
+    'action-color' : #FF4E00,
+    'warning-color' : darken(#EFAAC4, 30%))
+);
+
+$theme-map: null !global;

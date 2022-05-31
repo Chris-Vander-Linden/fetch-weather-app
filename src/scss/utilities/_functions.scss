@@ -1,3 +1,17 @@
+@use "sass:math";
+@use "variables";
+
+// convert pixels to rem
+@function pixels-to-rem($pixel-size) {
+  @return #{math.div($pixel-size, 16px)}rem;
+}
+
+// insert this function in @mixin themes to get values of colors from theme map
+
+@function get-theme($key) {
+  @return map-get($theme-map, $key);
+}
+
 /* Time of Day Themes */
 @function time-of-day($day: true) {
 
