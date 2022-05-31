@@ -1,3 +1,5 @@
+@use "../utilities/mixins";
+
 header {
   background-color: #1d1d1d;
   color: #fff;
@@ -9,11 +11,11 @@ header {
 }
 
 #search-container {
-  @include tablet-landscape {
+  @include mixins.tablet-landscape {
     width: 100%;
   }
 
-  @include desktop {
+  @include mixins.desktop {
     max-width: 1000px;
   }
 
@@ -57,6 +59,7 @@ header {
   0% {
     opacity: 0;
   }
+
   90% {
     opacity: 0;
   }

@@ -1,9 +1,12 @@
 /* Time of Day Themes */
 @function time-of-day($day: true) {
+
   /* default to day */
   @if $day {
     @return purple;
-  } @else {
+  }
+
+  @else {
     @return pink;
   }
 }
@@ -12,10 +15,3 @@
   /* default to sunny */
   @return map-get($weather-icons, $weather);
 }
-/* Weather Conditions */
-$weather-icons: (
-  "sunny": red,
-  "cloudy": blue,
-  "snowy": yellow,
-  "overcast": green,
-);

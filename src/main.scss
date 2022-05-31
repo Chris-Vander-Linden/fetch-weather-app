@@ -1,22 +1,10 @@
-@import "./scss/setup/resets";
-@import "./scss/setup/media";
-@import "./scss/setup/utils";
-@import "./scss/setup/typography";
-
-@import "./scss/header";
-
-@import "./scss/sky/sky-animations";
-@import "./scss/sky/weather-variables";
-@import "./scss/sky/weather-functions";
-
-@import "./scss/thermometer/thermometer";
-
-@import "./scss/landscape/result-area";
-@import "./scss/landscape/landscape";
+@use "./scss/base/base-dir";
+@use "./scss/components/components-dir";
+@use "./scss/utilities/utilities-dir";
 
 /* set up basic structure for all main containers */
 body {
-  font-family: $font-stack;
+  font-family: base-dir.$font-stack;
 }
 
 #container {
@@ -30,19 +18,19 @@ body {
 
   margin: auto;
 
-  @include phone {
+  @include utilities-dir.phone {
     width: 100%;
   }
 
-  @include tablet-portrait {
+  @include utilities-dir.tablet-portrait {
     width: 100%;
   }
 
-  @include tablet-landscape {
+  @include utilities-dir.tablet-landscape {
     width: 100%;
   }
 
-  @include desktop {
+  @include utilities-dir.desktop {
     max-width: 1000px;
   }
 }
