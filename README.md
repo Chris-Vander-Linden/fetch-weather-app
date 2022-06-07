@@ -1,5 +1,15 @@
 # Fetch Weather App
 
+## *** This project is still in progress ***
+
+This project was created to demonstrate the following:
+
+* Item 1
+* Item 2
+* Item 3
+  * Sub Item A
+  * Sub Item B
+
 ![Image Name](Image location)
 
 Instructions for installing and using this application.
