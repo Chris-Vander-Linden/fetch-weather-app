@@ -1,8 +1,9 @@
 # Fetch Weather App
 
-## *** This project is still in progress ***
+### *** This project is still in progress ***
 
-This project was created to demonstrate the following:
+Below is a link to the incomplete prototype version of the project.  Type the zipcode to run the animations and get the current weather data.
+[Demo](https://calm-llama-1f1bb7.netlify.app/)
 
 Instructions for installing and using this application.
 
