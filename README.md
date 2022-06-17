@@ -4,14 +4,6 @@
 
 This project was created to demonstrate the following:
 
-* Item 1
-* Item 2
-* Item 3
-  * Sub Item A
-  * Sub Item B
-
-![Image Name](Image location)
-
 Instructions for installing and using this application.
 
 Step 1: Get your API key from: [https://home.openweathermap.org/users/sign_up](https://home.openweathermap.org/users/sign_up)
